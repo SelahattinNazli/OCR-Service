@@ -226,12 +226,6 @@ DEBUG=False
 4. LLM extracts and validates fields based on context
 5. Results returned with raw text and parsed fields
 
-## 📊 Performance
-
-| Method | Speed | Accuracy | Cost |
-|--------|-------|----------|------|
-| **EasyOCR** | ⚡ Fast (1-3s) | ⭐⭐⭐⭐ 95% | 💰 Free |
-| **LLM-OCR** | 🐢 Slower (10-30s) | ⭐⭐⭐⭐⭐ 99% | 💰 Free (Local) |
 
 ## 🛠️ Development
 
@@ -371,11 +365,3 @@ MIT License - See LICENSE file for details
 ## 👨‍💻 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Support
-
-For issues and questions, please open a GitHub Issue.
-
----
-
-**Built with ❤️ for efficient document processing**
