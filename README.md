@@ -1,8 +1,8 @@
 # OCR Service - FastAPI based Document Text Extraction
 
-A modern FastAPI-based OCR service that extracts text from PDF documents and intelligently parses specific fields using two different OCR approaches: **EasyOCR** for fast text extraction and **Ollama Gemma3** for intelligent field parsing.
+A modern FastAPI-based OCR service that extracts text from PDF documents and intelligently parses specific fields using two different OCR approaches: **EasyOCR** for fast text extraction and **LLM-Based OCR** for intelligent field parsing.
 
-## 🎯 Project Overview
+##  Project Overview
 
 This service provides a RESTful API for:
 - **File Upload**: Upload PDF documents with unique UUID identification
@@ -11,32 +11,31 @@ This service provides a RESTful API for:
   - **EasyOCR**: Regex-based pattern matching (fast, deterministic)
   - **LLM-based (Ollama Gemma3)**: AI-powered parsing (accurate, context-aware)
 
-## ✨ Features
+##  Features
 
-- 🚀 **Fast & Reliable**: EasyOCR-based text extraction with 99% accuracy for Turkish documents
-- 🤖 **Two OCR Methods**: 
+-  **Fast & Reliable**: EasyOCR-based text extraction
+-  **Two OCR Methods**: 
   - EasyOCR with regex pattern matching
   - Ollama Gemma3 LLM for intelligent field extraction
-- 📄 **PDF Support**: Automatic PDF to image conversion
-- 🐳 **Docker Ready**: Full Docker and Docker Compose support
-- ⚡ **Modern Stack**: FastAPI, Pydantic v2, UV package manager
-- 📚 **Auto Cleanup**: Uploaded files automatically deleted after processing
-- 🔄 **Type Conversion**: Automatic field type conversion (string, integer)
+-  **PDF Support**: Automatic PDF to image conversion
+-  **Docker Ready**: Full Docker and Docker Compose support
+-  **Modern Stack**: FastAPI, Pydantic v2, UV package manager
+-  **Auto Cleanup**: Uploaded files automatically deleted after processing
+-  **Type Conversion**: Automatic field type conversion (string, integer)
 
-## 📋 Requirements
+##  Requirements
 
 - Python 3.11+
 - Docker & Docker Compose (for containerized deployment)
 - Ollama (for LLM-based OCR) - optional
-- 2GB+ RAM (4GB+ recommended)
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Local Setup
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/OCR.git
+git clone https://github.com/SelahattinNazli/OCR-Service/OCR.git
 cd OCR
 ```
 
@@ -82,7 +81,7 @@ curl http://localhost:8000/health
 http://localhost:8000/docs
 ```
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### 1. File Upload
 Upload a PDF document and get a unique file ID.
@@ -149,7 +148,7 @@ Extract text and parse fields from uploaded document.
   "ocr": "easyocr",
   "result": {
     "tax_number": 8930622457,
-    "company_name": "UPSONIC TEKNOLOJI ANONİM ŞİRKETİ"
+    "company_name": "... TEKNOLOJI ANONİM ŞİRKETİ"
   },
   "raw_ocr": "Extracted text from document..."
 }
@@ -167,7 +166,7 @@ Check if the service is running.
 }
 ```
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 OCR/
@@ -189,7 +188,7 @@ OCR/
 └── README.md                   # This file
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 Create a `.env` file with the following variables:
 
@@ -211,7 +210,7 @@ GEMINI_API_KEY=your_key_here
 DEBUG=False
 ```
 
-## 🔄 How It Works
+##  How It Works
 
 ### EasyOCR Method
 1. User uploads PDF → Service converts to image
@@ -227,7 +226,7 @@ DEBUG=False
 5. Results returned with raw text and parsed fields
 
 
-## 🛠️ Development
+##  Development
 
 ### Install Development Dependencies
 ```bash
@@ -254,7 +253,7 @@ uv run uvicorn app.main:app --reload
 docker logs -f ocr-service
 ```
 
-## 🐳 Docker Commands
+##  Docker Commands
 
 ```bash
 # Build image
@@ -272,7 +271,7 @@ docker-compose down         # Stop
 docker-compose up -d --build
 ```
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Service won't start
 ```bash
@@ -296,7 +295,7 @@ docker-compose restart ocr-service
 - Requires internet connection
 - Can take 1-2 minutes on first run
 
-## 📝 Example Usage
+##  Example Usage
 
 ### Python
 ```python
@@ -348,7 +347,7 @@ curl -X POST "http://localhost:8000/api/ocr" \
   }"
 ```
 
-## 📚 Technologies Used
+##  Technologies Used
 
 - **FastAPI** - Modern web framework
 - **EasyOCR** - Fast text extraction
@@ -358,10 +357,10 @@ curl -X POST "http://localhost:8000/api/ocr" \
 - **Docker** - Containerization
 - **Uvicorn** - ASGI server
 
-## 📄 License
+##  License
 
 MIT License - See LICENSE file for details
 
-## 👨‍💻 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
