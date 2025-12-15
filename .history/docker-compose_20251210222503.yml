@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  ocr-service:
+    build: .
+    container_name: ocr-service
+    ports:
+      - "8000:8000"
+
+    environment:
+      OLLAMA_API_URL: "http://host.docker.internal:11434"
+      OLLAMA_MODEL: "gemma3:4b"
+      UPLOAD_DIR: "/app/uploads"
+      MAX_FILE_SIZE: "10485760"
+      ALLOWED_EXTENSIONS: "pdf"
+      DEBUG: "False"
+
+    volumes:
+      - ./app/uploads:/app/uploads
+
+    env_file:
+      - .env
+
+    restart: unless-stopped
